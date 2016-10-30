@@ -306,6 +306,8 @@ void RSP_Init()
 	else if (strstr(RSP.romname, (const char *)"Resident Evil II") ||
 			 strstr(RSP.romname, (const char *)"BioHazard II"))
 		config.generalEmulation.hacks |= hack_RE2 | hack_ModifyVertexXyInShader | hack_LoadDepthTextures;
+	else if (strstr(RSP.romname, (const char *)"GAUNTLET LEGENDS") != nullptr)
+		config.generalEmulation.hacks |= hack_SkipRepeatRSPInstr;
 
 	api().FindPluginPath(RSP.pluginpath);
 

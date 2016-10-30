@@ -199,6 +199,7 @@ struct Config
 #define hack_Snap					(1<<17) //Frame buffer settings for camera detection in Pokemon Snap. Copy aux buffers at fullsync
 #define hack_MK64					(1<<18) //Hack for load MK64 HD textures properly.
 #define hack_RE2					(1<<19) //RE2 hacks.
+#define hack_SkipRepeatRSPInstr		(1<<20) //Skip repeat RSP instructions under some circumstances
 
 extern Config config;
 

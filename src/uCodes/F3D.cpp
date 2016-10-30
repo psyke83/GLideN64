@@ -7,6 +7,7 @@
 #include "gSP.h"
 #include "gDP.h"
 #include "GBI.h"
+#include "Config.h"
 
 void F3D_SPNoOp( u32 w0, u32 w1 )
 {
@@ -84,6 +85,13 @@ void F3D_Reserved1( u32 w0, u32 w1 )
 
 void F3D_DList( u32 w0, u32 w1 )
 {
+	// Gauntlet legends fix taken from GLide64mk2
+	if ((config.generalEmulation.hacks&hack_SkipRepeatRSPInstr) != 0)
+	{
+		if (RSP_SegmentToPhysical(w1) == RSP.PC[RSP.PCi] - 8)
+			return;
+	}
+
 	switch (_SHIFTR( w0, 16, 8 ))
 	{
 		case G_DL_PUSH:
