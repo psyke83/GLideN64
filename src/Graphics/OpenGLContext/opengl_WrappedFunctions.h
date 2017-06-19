@@ -1791,7 +1791,6 @@ namespace opengl {
 		u32 m_length;
 		GLbitfield m_access;
 		static std::unordered_map<int, std::shared_ptr<std::vector<u8>>> m_data;
-		static std::unordered_map<int, u32> m_sizes;
 		static std::mutex m_mapMutex;
 	};
 
